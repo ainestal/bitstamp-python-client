@@ -76,9 +76,9 @@ class BaseClient(object):
         
         """
         f = open(path, "r")
-        self.BitstampUser = f.readline().strip()
-        self.BitstampKey = f.readline().strip()
-        self.BitstampSecret = f.readline().strip()
+        self.username = f.readline().strip()
+        self.key = f.readline().strip()
+        self.secret = f.readline().strip()
 
 
 class Public(BaseClient):
