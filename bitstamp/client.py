@@ -67,7 +67,7 @@ class BaseClient(object):
                 raise BitstampError(error)
 
         return response
-        
+
     def load_key(self, path):
         """Load key and secret from file.
         
@@ -76,8 +76,9 @@ class BaseClient(object):
         
         """
         f = open(path, "r")
-        self.key = f.readline().strip()
-        self.secret = f.readline().strip()
+        self.BitstampUser = f.readline().strip()
+        self.BitstampKey = f.readline().strip()
+        self.BitstampSecret = f.readline().strip()
 
 
 class Public(BaseClient):
