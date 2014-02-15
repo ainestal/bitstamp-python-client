@@ -67,6 +67,17 @@ class BaseClient(object):
                 raise BitstampError(error)
 
         return response
+        
+    def load_key(self, path):
+        """Load key and secret from file.
+        
+        Argument:
+        path -- path to file (string, no default)
+        
+        """
+        f = open(path, "r")
+        self.key = f.readline().strip()
+        self.secret = f.readline().strip()
 
 
 class Public(BaseClient):
